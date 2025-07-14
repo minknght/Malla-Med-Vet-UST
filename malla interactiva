@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Malla Medicina Veterinaria UST</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #fdf6f0;
+      margin: 0;
+      padding: 1rem;
+    }
+    h1 {
+      text-align: center;
+      color: #5d4b4b;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(10, minmax(180px, 1fr));
+      gap: 10px;
+      overflow-x: auto;
+    }
+    .sem {
+      background: #fce8e6;
+      border: 2px solid #e6bcbc;
+      border-radius: 10px;
+      padding: 0.5rem;
+    }
+    .sem h3 {
+      text-align: center;
+      font-size: 1rem;
+      color: #9c6f68;
+    }
+    .course {
+      background: #fefefe;
+      margin: 5px 0;
+      padding: 0.5rem;
+      border-radius: 5px;
+      cursor: pointer;
+      border: 1px solid #ddd;
+    }
+    .course.approved {
+      text-decoration: line-through;
+      background: #d6f5e3;
+      border-color: #66bb6a;
+    }
+    .course[data-status='locked'] {
+      opacity: 0.4;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Malla Medicina Veterinaria - UST</h1>
+  <div class="grid">
+<div class="sem"><h3>I Semestre</h3><div class="course" data-code="VET-069" onclick="toggleApproval(this)">Zoología</div><div class="course" data-code="VET-070" onclick="toggleApproval(this)">Intro a la MV</div><div class="course" data-code="MAT-016" onclick="toggleApproval(this)">Razonamiento Lógico</div><div class="course" data-code="BIO-002" onclick="toggleApproval(this)">Biología Celular</div><div class="course" data-code="FGL-149" onclick="toggleApproval(this)">Comp. Comunicativas</div><div class="course" data-code="FGL-151" onclick="toggleApproval(this)">Desarrollo Personal I</div></div><div class="sem"><h3>II Semestre</h3><div class="course" data-code="VET-121" onclick="toggleApproval(this)">Anatomía de Cía</div><div class="course" data-code="VET-122" onclick="toggleApproval(this)">Etología y Bienestar</div><div class="course" data-code="QUI-003" onclick="toggleApproval(this)">Química</div><div class="course" data-code="FGL-152" onclick="toggleApproval(this)">Desarrollo Personal II</div><div class="course" data-code="FGL-001" onclick="toggleApproval(this)">Cultura y Valores</div><div class="course" data-code="COM-001" onclick="toggleApproval(this)">Taller Aprendizaje</div></div><div class="sem"><h3>III Semestre</h3><div class="course" data-code="VET-123" onclick="toggleApproval(this)">Anatomía de Mayores</div><div class="course" data-code="VET-072" onclick="toggleApproval(this)">Histología</div><div class="course" data-code="FGL-008" onclick="toggleApproval(this)">Inglés I</div><div class="course" data-code="EST-001" onclick="toggleApproval(this)">Bioestadística</div><div class="course" data-code="BIO-003" onclick="toggleApproval(this)">Bioquímica</div><div class="course" data-code="FGL-111" onclick="toggleApproval(this)">Persona y Sentido</div></div><div class="sem"><h3>IV Semestre</h3><div class="course" data-code="VET-125" onclick="toggleApproval(this)">Fisiología</div><div class="course" data-code="VET-076" onclick="toggleApproval(this)">Microbiología</div><div class="course" data-code="VET-073" onclick="toggleApproval(this)">Inmunología</div><div class="course" data-code="VET-135" onclick="toggleApproval(this)">Zootecnia</div><div class="course" data-code="VET-134" onclick="toggleApproval(this)">Ecología</div><div class="course" data-code="VET-078" onclick="toggleApproval(this)">Práctica Básica</div><div class="course" data-code="MEC-H1" onclick="toggleApproval(this)">MEC Hito 1</div></div><div class="sem"><h3>V Semestre</h3><div class="course" data-code="VET-126" onclick="toggleApproval(this)">Fisiopatología</div><div class="course" data-code="VET-086" onclick="toggleApproval(this)">Parasitos</div><div class="course" data-code="VET-136" onclick="toggleApproval(this)">Nutrición</div><div class="course" data-code="VET-124" onclick="toggleApproval(this)">Reproducción</div><div class="course" data-code="VET-137" onclick="toggleApproval(this)">Gestión Ambiental</div><div class="course" data-code="FGL-010" onclick="toggleApproval(this)">Inglés II</div></div><div class="sem"><h3>VI Semestre</h3><div class="course" data-code="VET-127" onclick="toggleApproval(this)">Patología de Sistemas</div><div class="course" data-code="VET-084" onclick="toggleApproval(this)">Farmacología</div><div class="course" data-code="VET-089" onclick="toggleApproval(this)">Infecciosas</div><div class="course" data-code="VET-132" onclick="toggleApproval(this)">Alimentación</div><div class="course" data-code="VET-133" onclick="toggleApproval(this)">Gestión Negocios</div><div class="course" data-code="VET-131" onclick="toggleApproval(this)">Ética y Legislación</div></div><div class="sem"><h3>VII Semestre</h3><div class="course" data-code="VET-090" onclick="toggleApproval(this)">Semiología</div><div class="course" data-code="VET-129" onclick="toggleApproval(this)">Patología Clínica</div><div class="course" data-code="VET-091" onclick="toggleApproval(this)">Prod. Monogástricos</div><div class="course" data-code="VET-138" onclick="toggleApproval(this)">Epidemiología</div><div class="course" data-code="VET-128" onclick="toggleApproval(this)">Inocuidad</div><div class="course" data-code="VET-139" onclick="toggleApproval(this)">Innovación</div></div><div class="sem"><h3>VIII Semestre</h3><div class="course" data-code="VET-102" onclick="toggleApproval(this)">Med. Compañía</div><div class="course" data-code="VET-093" onclick="toggleApproval(this)">Procedimientos</div><div class="course" data-code="VET-130" onclick="toggleApproval(this)">Imagenología</div><div class="course" data-code="VET-140" onclick="toggleApproval(this)">Prod. Rumiantes</div><div class="course" data-code="VET-141" onclick="toggleApproval(this)">Med. Conservación</div><div class="course" data-code="ELEC-I" onclick="toggleApproval(this)">Electivo I</div><div class="course" data-code="MEC-H2" onclick="toggleApproval(this)">MEC Hito 2</div></div><div class="sem"><h3>IX Semestre</h3><div class="course" data-code="VET-105" onclick="toggleApproval(this)">Clínica Compañía</div><div class="course" data-code="VET-106" onclick="toggleApproval(this)">Cirugía</div><div class="course" data-code="VET-103" onclick="toggleApproval(this)">Med. Equino</div><div class="course" data-code="VET-101" onclick="toggleApproval(this)">Med. Producción</div><div class="course" data-code="VET-127" onclick="toggleApproval(this)">Metodología Inv.</div><div class="course" data-code="ELEC-II" onclick="toggleApproval(this)">Electivo II</div></div><div class="sem"><h3>X Semestre</h3><div class="course" data-code="INT-COMP" onclick="toggleApproval(this)">Internado Cía</div><div class="course" data-code="INT-MAY" onclick="toggleApproval(this)">Internado Mayores</div><div class="course" data-code="VET-142" onclick="toggleApproval(this)">Módulo Una Salud</div><div class="course" data-code="VET-133" onclick="toggleApproval(this)">Tesis</div><div class="course" data-code="ELEC-III" onclick="toggleApproval(this)">Electivo III</div></div>
+  </div>
+  <script>
+    const prereqs = {
+      "VET-072": ["BIO-002"],
+      "VET-123": ["VET-121"],
+      "VET-076": ["VET-072"],
+      "VET-073": ["BIO-002"],
+      "VET-135": ["EST-001"],
+      "VET-125": ["VET-123"],
+      "VET-126": ["VET-125"],
+      "VET-086": ["VET-073"],
+      "VET-136": ["BIO-003"],
+      "VET-124": ["VET-125"],
+      "VET-127": ["VET-126"],
+      "VET-089": ["VET-076"],
+      "VET-132": ["VET-136"],
+      "VET-131": ["VET-078"],
+      "VET-090": ["VET-127"],
+      "VET-129": ["VET-127"],
+      "VET-091": ["VET-135"],
+      "VET-138": ["VET-086", "VET-089"],
+      "VET-128": ["VET-076"],
+      "VET-102": ["VET-129"],
+      "VET-093": ["VET-090"],
+      "VET-130": ["VET-090"],
+      "VET-140": ["VET-122", "VET-124", "VET-136"],
+      "VET-141": ["VET-137", "VET-138"],
+      "VET-105": ["VET-102", "VET-093"],
+      "VET-106": ["VET-084", "VET-130"],
+      "VET-103": ["VET-093"],
+      "VET-101": ["VET-140"],
+      "VET-142": ["VET-141", "VET-128", "VET-138"],
+      "INT-COMP": ["VET-105", "VET-106"],
+      "INT-MAY": ["VET-101", "VET-103"]
+    };
+
+    document.querySelectorAll(".course").forEach(course => {
+      const code = course.dataset.code;
+      const needs = prereqs[code];
+      if (needs) course.setAttribute("data-status", "locked");
+    });
+
+    function toggleApproval(element) {
+      const code = element.dataset.code;
+      const approved = element.classList.toggle("approved");
+
+      if (approved) {
+        document.querySelectorAll(".course[data-status='locked']").forEach(course => {
+          const c = course.dataset.code;
+          const needs = prereqs[c];
+          if (needs && needs.every(req => document.querySelector(`[data-code='${req}']`).classList.contains("approved"))) {
+            course.removeAttribute("data-status");
+          }
+        });
+      } else {
+        Object.entries(prereqs).forEach(([c, reqs]) => {
+          if (reqs.includes(code)) {
+            const dependent = document.querySelector(`[data-code='${c}']`);
+            if (dependent) {
+              dependent.setAttribute("data-status", "locked");
+              dependent.classList.remove("approved");
+            }
+          }
+        });
+      }
+    }
+  </script>
+</body>
+</html>
